@@ -164,3 +164,9 @@ body {
     border: 1px solid #D685AD;
   }
   
+  /* details page */
+  .poke-name {
+    text-align: center;
+    font-family: perpetua;
+    text-transform: capitalize;
+}
