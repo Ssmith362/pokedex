@@ -4,12 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokemon</title>
     <link rel="stylesheet" href="{% static 'pokedex/style.css' %}">
 </head>
+<style>
+   
+    .pokemon-details-img {
+        height: 16rem;
+    }
+    
+    
+    </style>
 <body>
-    <img src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
-    <h1><span>{{pokemon.number}}</span> {{ pokemon.name }}</h1>
+    {% include 'pokedex/_navbar.html' %}
+    <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
+    <h1 class="poke-name"><span>#{{pokemon.number}}</span> {{ pokemon.name }}</h1>
     <section>
         {% for type in pokemon.types.all %}
             <span class="type {{type.name}}">{{ type.name }}</span>
