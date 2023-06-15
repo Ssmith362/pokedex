@@ -1,22 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
-    <link rel="stylesheet" href="{% static 'pokedex/style.css' %}">
-</head>
-<style>
-   
-    .pokemon-details-img {
-        height: 16rem;
-    }
-    
-    
-    </style>
-<body>
-    {% include 'pokedex/_navbar.html' %}
+{% extends 'pokedex/base.html' %}
+
+{% block title %}
+Pokemon
+{% endblock %}
+
+
+{% block content %}
     <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
     <h1 class="poke-name"><span>#{{pokemon.number}}</span> {{ pokemon.name }}</h1>
     <section>
@@ -61,5 +50,4 @@
         </table>
     </section>
 
-</body>
-</html>
+{% endblock %}
