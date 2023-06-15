@@ -6,8 +6,8 @@ Pokemon
 
 
 {% block content %}
-    <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
     <h1 class="poke-name"><span>#{{pokemon.number}}</span> {{ pokemon.name }}</h1>
+    <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
     <section>
         {% for type in pokemon.types.all %}
             <span class="type {{type.name}}">{{ type.name }}</span>
