@@ -1,17 +1,17 @@
 {% extends 'pokedex/base.html' %}
 
 {% block title %}
-{{request.user.username}}
+Teams
 {% endblock %}
 
 {% block content %}
 
-<h1>{{user.username}}</h1>
+<h1>Welcome: {{user.username}}</h1>
 <p> {{team.description}} </p>
 
-<div class ="poke-container">
-    {% for team in teams%}
-    <h5>Team: {{team.name}}</h5>
+<div class ="all-teams-container">
+    {% for team in teams %}
+    <h3>Team: <a href="{% url 'team-detail' team.id%}">{{team.name}}</a></h3>
     {% for poke in team.pokemon.all %}
     <div>
         
@@ -27,9 +27,5 @@
     {%endfor %}
     {% endfor %}
 </div>
-
-
-
-
 
 {% endblock %}

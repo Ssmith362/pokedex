@@ -6,11 +6,10 @@
 
 
 {% block content %}
-<h1>{{team.name}}</h1>
-<p> {{team.description}} </p>
-<h5>Created by: {{ team.user.username}}</h5>
 
-<div class ="poke-container">
+<h1>Created by: {{team.user.username}}</h1>
+
+<div class ="team-container">
     {% for poke in team.pokemon.all %}
     <div>
         

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
@@ -49,5 +49,14 @@ def profile_view(request):
         "teams" :team
     }
     return render(request, 'users/profile.html', context)
+
+@login_required(login_url='/users/login/')
+def team_detail_view(request, team_id):
+    team = get_object_or_404(Team, id=team_id)
+
+    context = {
+        "team" :team
+    }
+    return render(request, 'pokedex/team-detail.html', context)
 
 
