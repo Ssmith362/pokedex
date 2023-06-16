@@ -172,10 +172,31 @@ body {
     text-align: center;
     font-family: perpetua;
     text-transform: capitalize;
-}
+
+ }
+ .pokemon-details-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+ }
+
+ .pokemon-detail {
+  margin-left: auto;
+  margin-right: auto;
 
 
+ }
+
+ .ability-effect {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+ }
+
+/* pokemon display on the homepage */
 .display-pokemon {
   display: flex;
   flex-wrap: wrap;
 }
+

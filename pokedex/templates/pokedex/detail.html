@@ -6,15 +6,15 @@ Pokemon
 
 
 {% block content %}
-    <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
     <h1 class="poke-name"><span>#{{pokemon.number}}</span> {{ pokemon.name }}</h1>
+    <img class="pokemon-details-img"src="{{ pokemon.image_url }}" alt="{{ pokemon.name }}">
     <section>
         {% for type in pokemon.types.all %}
             <span class="type {{type.name}}">{{ type.name }}</span>
         {% endfor %}
     </section>
     <section>
-        <table>
+        <table class = "pokemon-detail">
             <tr>
                 <th>Number</th>
                 <td>{{ pokemon.number }}</td>
@@ -27,26 +27,25 @@ Pokemon
                 <th>Weight</th>
                 <td>{{ pokemon.weight }}</td>
             </tr>
-            <tr>
-                <th>Types</th>
-                <td>{% for type in pokemon.types.all %}
-                    <span>{{ type.name }}</span>
-                {% endfor %}</td>
-            </tr>
+            
         </table>
     </section>
     <section>
-        <table>
+        <table class = "ability-effect">
             <tr>
                 <th>Ability</th>
-                <th>Effect</th>
-            </tr>
-            {% for ability in pokemon.abilities.all %}
+            
+            <td>{% for ability in pokemon.abilities.all %}</td>
                 <tr>
                     <td>{{ ability.name }}</td>
-                    <td>{{ ability.effect }}</td>
                 </tr>
             {% endfor %}
+            <tr>
+                <th>Effect</th>
+                    <td>{% for ability in pokemon.abilities.all %}</td>
+                    <td>{{ ability.effect }}</td>
+            {% endfor %}
+            
         </table>
     </section>
 
