@@ -7,6 +7,24 @@
 This is a simple pokedex app that allows you to search for pokemon and view their details. It also allows you to add pokemon to your favorites list and view them later.
 
 ## API and Data Sample
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/
+
+https://pokeapi.co/api/v2/pokemon/?limit={limit}
+
+## Pages 
+
+register.html - The sign up page, allows the user to create an account.
+
+login.html - Allows the user to login.
+
+detail.html - A page to view view the individual pokemon and their details
+
+index.html - The home page, displays all pokemon
+
+
+
+
+
 
 #### Get single pokemon: https://localhost:8000/api/pokemon/1/
 
