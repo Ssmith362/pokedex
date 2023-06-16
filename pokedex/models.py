@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Type(models.Model):
     name = models.CharField(max_length=50)
@@ -58,3 +58,13 @@ class Pokemon(models.Model):
             "types": [t.serialize() for t in self.types.all()],
             "abilities": [a.serialize() for a in self.abilities.all()]
         }
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=32)
+    pokemon = models.ManyToManyField(Pokemon,related_name="teams")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    description = models.CharField(max_length=240)
+
+    def __str__(self):
+        return self.name
